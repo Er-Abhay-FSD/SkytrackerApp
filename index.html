@@ -8,11 +8,22 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            background: linear-gradient(135deg, rgba(70,130,180,1) 0%, rgba(135,206,250,1) 100%);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         .container {
             max-width: 800px;
-            margin: auto;
+            margin: 20px;
             padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         h1, h2, h3, p {
             margin: 10px 0;
@@ -21,6 +32,18 @@
             background: #f4f4f4;
             padding: 2px 4px;
             border-radius: 4px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        ol li {
+            margin-bottom: 10px;
         }
         .screenshots {
             display: flex;
@@ -35,6 +58,32 @@
         .screenshots img {
             width: 100%;
             height: auto;
+            border-radius: 4px;
+        }
+        .screenshots .mobile-screenshots {
+            display: flex;
+            gap: 10px;
+        }
+        .screenshots .mobile-screenshots img {
+            width: 46%;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: #fff;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: #0056b3;
         }
     </style>
 </head>
@@ -58,7 +107,7 @@
         </ul>
 
         <h2>Live Link 🚀</h2>
-        <p><strong>This project is deployed at:</strong> <a href="https://sky-tracker-seven.vercel.app/">SkyTracker App</a></p>
+        <p><strong>This project is deployed at:</strong> <a href="https://sky-tracker-seven.vercel.app/" class="btn">SkyTracker App</a></p>
 
         <h2>To Run Locally 🛠️</h2>
         <p><em>You must have Node.js and NPM installed.</em></p>
@@ -93,9 +142,9 @@ VITE_OPENWEATHER_API_KEY="your-openweather-api-key"</code></pre>
         <div class="screenshots">
             <div>
                 <span style="font-size: 20px;">Mobiles 📱</span>
-                <div style="display: flex; gap: 10px;">
-                    <img src="./src/assets/screenshots/phoneimg1.jpg" alt="Mobile screenshot 1" style="width: 46%; height: auto;">
-                    <img src="./src/assets/screenshots/phoneimg2.jpeg" alt="Mobile screenshot 2" style="width: 46%; height: auto;">
+                <div class="mobile-screenshots">
+                    <img src="./src/assets/screenshots/phoneimg1.jpg" alt="Mobile screenshot 1">
+                    <img src="./src/assets/screenshots/phoneimg2.jpeg" alt="Mobile screenshot 2">
                 </div>
             </div>
             <div>
@@ -111,7 +160,7 @@ VITE_OPENWEATHER_API_KEY="your-openweather-api-key"</code></pre>
         </div>
 
         <h2>Profile Features 📝</h2>
-        <p>Click on <strong><a href="https://sky-tracker-seven.vercel.app/">SkyTracker</a></strong> to view the full list of features available in this app. Below is a screenshot of my profile showing the project:</p>
+        <p>Click on <strong><a href="https://sky-tracker-seven.vercel.app/" class="btn">SkyTracker</a></strong> to view the full list of features available in this app. Below is a screenshot of my profile showing the project:</p>
 
         <div class="screenshots">
             <img src="./src/assets/screenshots/pcblackprofile.png" alt="Profile screenshot showing SkyTracker">
