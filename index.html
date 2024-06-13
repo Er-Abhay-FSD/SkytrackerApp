@@ -17,13 +17,23 @@
             align-items: center;
             min-height: 100vh;
         }
-        .container {
+        .card {
+            background: rgba(255, 255, 255, 0.2); /* Transparent white background */
+            backdrop-filter: blur(10px); /* Adds the blur effect */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 100%;
             max-width: 800px;
             margin: 20px;
             padding: 20px;
-            background: #fff;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for content */
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin: 0;
         }
         h1, h2, h3, p {
             margin: 10px 0;
@@ -65,7 +75,16 @@
             gap: 10px;
         }
         .screenshots .mobile-screenshots img {
-            width: 46%;
+            width: 48%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .screenshots .tablet-screenshots img,
+        .screenshots .desktop-screenshots img,
+        .screenshots .profile-screenshots img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 4px;
         }
         a {
             color: #007BFF;
@@ -88,84 +107,83 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>SkyTracker App 🌤️</h1>
-        <h3>The most Beautiful Weather App (Made using React.js, Tailwind CSS, and Ant Design)</h3>
+    <div class="card">
+        <div class="container">
+            <h1>SkyTracker App 🌤️</h1>
+            <h3>The most Beautiful Weather App (Made using React.js, Tailwind CSS, and Ant Design)</h3>
 
-        <p>SkyTracker is a beautifully designed weather application built using the latest technologies including React.js ⚛️, Tailwind CSS 🎨, and Ant Design 🐜. This app provides accurate and up-to-date weather information powered by OpenWeather 🌦️ and Geoapify 🌍 APIs. It offers an intuitive user experience with a clean and responsive UI that adapts seamlessly to different screen sizes 📱💻🖥️ and modes 🌗.</p>
+            <p>SkyTracker is a beautifully designed weather application built using the latest technologies including React.js ⚛️, Tailwind CSS 🎨, and Ant Design 🐜. This app provides accurate and up-to-date weather information powered by OpenWeather 🌦️ and Geoapify 🌍 APIs. It offers an intuitive user experience with a clean and responsive UI that adapts seamlessly to different screen sizes 📱💻🖥️ and modes 🌗.</p>
 
-        <img src="./src/assets/screenshots/pcblack.png" alt="SkyTracker Banner">
+            <h2>APIs Used</h2>
+            <ul>
+                <li><strong>OpenWeather:</strong> <a href="https://openweathermap.org/api">OpenWeather API</a> 🌦️
+                    <p>Provides comprehensive weather data, including current weather conditions, forecasts, and historical data. The API delivers detailed information on temperature, humidity, wind speed, and other meteorological elements, ensuring that users receive accurate and real-time weather updates.</p>
+                </li>
+                <li><strong>Geoapify:</strong> <a href="https://www.geoapify.com/geocoding-api">Geoapify Geocoding API</a> 🌍
+                    <p>Offers geocoding and reverse geocoding services, which translate addresses into geographic coordinates and vice versa. This API enables the app to pinpoint user locations and fetch corresponding weather data efficiently, enhancing the overall user experience with precise location-based weather information.</p>
+                </li>
+            </ul>
 
-        <h2>APIs Used</h2>
-        <ul>
-            <li><strong>OpenWeather:</strong> <a href="https://openweathermap.org/api">OpenWeather API</a> 🌦️
-                <p>Provides comprehensive weather data, including current weather conditions, forecasts, and historical data. The API delivers detailed information on temperature, humidity, wind speed, and other meteorological elements, ensuring that users receive accurate and real-time weather updates.</p>
-            </li>
-            <li><strong>Geoapify:</strong> <a href="https://www.geoapify.com/geocoding-api">Geoapify Geocoding API</a> 🌍
-                <p>Offers geocoding and reverse geocoding services, which translate addresses into geographic coordinates and vice versa. This API enables the app to pinpoint user locations and fetch corresponding weather data efficiently, enhancing the overall user experience with precise location-based weather information.</p>
-            </li>
-        </ul>
+            <h2>Live Link 🚀</h2>
+            <p><strong>This project is deployed at:</strong> <a href="https://sky-tracker-seven.vercel.app/" class="btn">SkyTracker App</a></p>
 
-        <h2>Live Link 🚀</h2>
-        <p><strong>This project is deployed at:</strong> <a href="https://sky-tracker-seven.vercel.app/" class="btn">SkyTracker App</a></p>
-
-        <h2>To Run Locally 🛠️</h2>
-        <p><em>You must have Node.js and NPM installed.</em></p>
-        <ol>
-            <li><strong>Clone this project on your local device & install necessary packages:</strong>
-                <pre><code>git clone https://github.com/Er-Abhay-FSD/SkyTracker
+            <h2>To Run Locally 🛠️</h2>
+            <p><em>You must have Node.js and NPM installed.</em></p>
+            <ol>
+                <li><strong>Clone this project on your local device & install necessary packages:</strong>
+                    <pre><code>git clone https://github.com/Er-Abhay-FSD/SkyTracker
 cd SkyTracker
 npm install</code></pre>
-            </li>
-            <li><strong>Get your 'OpenWeather' and 'Geoapify' API keys, then create a <code>.env</code> file & add your API keys there:</strong>
-                <pre><code># inside .env file
+                </li>
+                <li><strong>Get your 'OpenWeather' and 'Geoapify' API keys, then create a <code>.env</code> file & add your API keys there:</strong>
+                    <pre><code># inside .env file
 VITE_GEOCODING_API_KEY="your-geoapify-api-key"
 VITE_OPENWEATHER_API_KEY="your-openweather-api-key"</code></pre>
-            </li>
-            <li><strong>Run the App:</strong>
-                <pre><code>npm run dev</code></pre>
-            </li>
-        </ol>
+                </li>
+                <li><strong>Run the App:</strong>
+                    <pre><code>npm run dev</code></pre>
+                </li>
+            </ol>
 
-        <h2>Features ✨</h2>
-        <ul>
-            <li><strong>Most beautiful UI</strong> that I've ever made</li>
-            <li><strong>Dark and Light modes</strong> for optimal viewing experience</li>
-            <li><strong>Responsive UI</strong> that looks great on all screen sizes</li>
-            <li>Supports <strong>Celsius and Fahrenheit</strong> units</li>
-            <li><strong>5-Day Weather Forecast</strong> to plan your week ahead</li>
-            <li>Efficient <strong>API handling</strong></li>
-            <li><strong>Industry-standard code structure</strong> for maintainability</li>
-        </ul>
+            <h2>Features ✨</h2>
+            <ul>
+                <li><strong>Most beautiful UI</strong> that I've ever made</li>
+                <li><strong>Dark and Light modes</strong> for optimal viewing experience</li>
+                <li><strong>Responsive UI</strong> that looks great on all screen sizes</li>
+                <li>Supports <strong>Celsius and Fahrenheit</strong> units</li>
+                <li><strong>5-Day Weather Forecast</strong> to plan your week ahead</li>
+                <li>Efficient <strong>API handling</strong></li>
+                <li><strong>Industry-standard code structure</strong> for maintainability</li>
+            </ul>
 
-        <h2>Screenshots 📸</h2>
-        <div class="screenshots">
-            <div>
-                <span style="font-size: 20px;">Mobiles 📱</span>
-                <div class="mobile-screenshots">
-                    <img src="./src/assets/screenshots/phoneimg1.jpg" alt="Mobile screenshot 1">
-                    <img src="./src/assets/screenshots/phoneimg2.jpeg" alt="Mobile screenshot 2">
+            <h2>Screenshots 📸</h2>
+            <div class="screenshots">
+                <div>
+                    <span style="font-size: 20px;">Mobiles 📱</span>
+                    <div class="mobile-screenshots">
+                        <img src="./src/assets/screenshots/phoneimg1.jpg" alt="Mobile screenshot 1">
+                        <img src="./src/assets/screenshots/phoneimg2.jpeg" alt="Mobile screenshot 2">
+                    </div>
+                </div>
+                <div>
+                    <span style="font-size: 20px;">Tablets 📱</span>
+                    <img src="./src/assets/screenshots/ss3.png" alt="Tablet screenshot 1">
+                    <img src="./src/assets/screenshots/ss4.png" alt="Tablet screenshot 2">
+                </div>
+                <div>
+                    <span style="font-size: 20px;">Desktops 🖥️</span>
+                    <img src="./src/assets/screenshots/pcblack.png" alt="Desktop screenshot 1">
+                    <img src="./src/assets/screenshots/pclight.png" alt="Desktop screenshot 2">
                 </div>
             </div>
-            <div>
-                <span style="font-size: 20px;">Tablets 📱</span>
-                <img src="./src/assets/screenshots/ss3.png" alt="Tablet screenshot 1">
-                <img src="./src/assets/screenshots/ss4.png" alt="Tablet screenshot 2">
-            </div>
-            <div>
-                <span style="font-size: 20px;">Desktops 🖥️</span>
-                <img src="./src/assets/screenshots/pcblack.png" alt="Desktop screenshot 1">
-                <img src="./src/assets/screenshots/pclight.png" alt="Desktop screenshot 2">
-            </div>
-        </div>
 
-        <h2>Profile Features 📝</h2>
-        <p>Click on <strong><a href="https://sky-tracker-seven.vercel.app/" class="btn">SkyTracker</a></strong> to view the full list of features available in this app. Below is a screenshot of my profile showing the project:</p>
+            <h2>Profile Features 📝</h2>
+            <p>Click on <strong><a href="https://sky-tracker-seven.vercel.app/" class="btn">SkyTracker</a></strong> to view the full list of features available in this app. Below is a screenshot of my profile showing the project:</p>
 
-        <div class="screenshots">
-            <img src="./src/assets/screenshots/pcblackprofile.png" alt="Profile screenshot showing SkyTracker">
-            <img src="./src/assets/screenshots/pclightprofile.png" alt="Profile screenshot showing SkyTracker">
-        </div>
+            <div class="screenshots">
+                <img src="./src/assets/screenshots/pcblackprofile.png" alt="Profile screenshot showing SkyTracker">
+                <img src="./src/assets/screenshots/pclightprofile.png" alt="Profile screenshot showing SkyTracker">
+            </div>
 
         <h2>How to Contribute 🤝</h2>
         <ol>
@@ -189,5 +207,6 @@ VITE_OPENWEATHER_API_KEY="your-openweather-api-key"</code></pre>
 
         <p>Made with ❤️ by <a href="https://github.com/Er-Abhay-FSD">ABHAY SINGH</a></p>
     </div>
+    
 </body>
 </html>
